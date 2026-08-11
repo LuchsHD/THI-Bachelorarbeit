@@ -1,0 +1,28 @@
+# LaTeX auxiliary/build files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.idx
+*.ind
+*.ilg
+*.lof
+*.lot
+
+# glossaries / acronyms
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+
+# nomenclature
+*.nlo
+*.nls

@@ -1,0 +1,492 @@
+% =====================================================================
+% Strukturplan für die Bachelorarbeit
+% Eigenständiges Dokument (nicht Teil von thesis.tex) - dient als
+% Planungs-/Referenzdokument und als erste Uebungsdatei fuer VS Code.
+% =====================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{geometry}
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
+
+\usepackage{enumitem}
+\setlist{itemsep=1pt, topsep=2pt}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+\usepackage{xcolor}
+\definecolor{thiblau}{rgb}{0,0.112,0.47}
+\definecolor{notebg}{RGB}{240,240,250}
+
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{thiblau}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{thiblau}}{\thesubsection}{1em}{}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\title{\color{thiblau}Strukturplan für die Bachelorarbeit}
+\author{Thomas Schneider}
+\date{Stand: \today}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------------
+\section*{General Information}
+\begin{tabular}{@{}ll}
+	\textbf{Name:}      & Thomas Schneider \\
+	\textbf{Standort:}  & Technische Hochschule Ingolstadt (THI) \\
+	\textbf{Sprache:}   & Englisch \\
+	\textbf{Titel:}     & Implementation and Visualization of a Post-Quantum Cryptosystem \\
+	                    & Using the Example of the McEliece Cryptosystem \\
+\end{tabular}
+
+% ---------------------------------------------------------------
+\section*{Research Question}
+How can the McEliece cryptosystem be implemented and visualized within CrypTool
+Online to improve the understanding of code-based post-quantum cryptography for
+students?
+
+% ---------------------------------------------------------------
+\section*{Executive Summary}
+The emergence of quantum computing poses a significant threat to currently deployed
+public-key cryptographic systems such as RSA and Elliptic Curve Cryptography.
+Algorithms like Shor's algorithm are expected to compromise the security assumptions
+of these systems once sufficiently powerful quantum computers become available.
+Consequently, post-quantum cryptography has become an important research and
+development area within modern information security.
+
+Among the various approaches to post-quantum cryptography, the McEliece cryptosystem
+represents one of the oldest and most extensively studied code-based cryptographic
+systems. Despite decades of cryptanalytic research, no practical attacks against
+properly parameterized variants of the system are known. However, due to its strong
+mathematical foundations in coding theory, the McEliece cryptosystem is often
+perceived as difficult to understand, especially for students encountering
+post-quantum cryptography for the first time.
+
+This thesis addresses the challenge of making the McEliece cryptosystem more
+accessible for educational purposes. Rather than focusing on advanced mathematical
+proofs or cryptanalytic research, the thesis investigates how the essential concepts
+and processes of the cryptosystem can be presented in a comprehensible and
+interactive manner.
+
+The primary objective is the design and implementation of an educational
+visualization tool based on CrypTool Online (CTO). The work includes the
+identification of relevant theoretical concepts, the development of a didactic
+visualization approach, the design of a software architecture suitable for
+educational use, and the implementation of a CrypTool Online plugin that visualizes
+the key generation, encryption, and decryption processes of the McEliece
+cryptosystem.
+
+The resulting artifact aims to support students in understanding the relationship
+between coding theory and post-quantum cryptography while demonstrating how
+interactive visualizations can improve the learning process in complex
+security-related domains.
+
+The thesis contributes both a practical software implementation and a didactic
+framework for teaching code-based post-quantum cryptography.
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% =================================================================
+\section{Introduction}
+
+\subsection{Motivation}
+\begin{itemize}
+	\item Bedrohung klassischer Kryptographie durch Quantencomputer
+	\item Relevanz von PQC
+	\item Schwierigkeit des Verständnisses codebasierter Verfahren
+	\item Bedarf an Lehr- und Lernwerkzeug
+\end{itemize}
+
+\subsection{Problem Statement}
+\begin{itemize}
+	\item McEliece ist mathematisch anspruchsvoll
+	\item Vorhandene Literatur richtet sich häufig an Experten
+	\item Fehlende interaktive Lernwerkzeuge
+\end{itemize}
+
+\subsection{Research Question}
+Vorstellung der Forschungsfrage
+
+\subsection{Objectives}
+\begin{itemize}
+	\item Entwicklung eines CTO-Plugins
+	\item Visualisierung zentraler Abläufe
+	\item Unterstützung des Lernprozesses
+\end{itemize}
+
+\subsection{Scope}
+Abgrenzung der Arbeit
+
+\subsection{Structure of the Thesis}
+Kurze Beschreibung aller Kapitel
+
+% =================================================================
+\section{Fundamentals of Cryptography}
+
+\subsection{Symmetric and Asymmetric Cryptography}
+\begin{itemize}
+	\item Grundprinzipien
+	\item Key Exchange
+	\item Public-Key-Verfahren
+\end{itemize}
+
+\subsection{Security Concepts}
+\begin{itemize}
+	\item Confidentiality
+	\item Integrity
+	\item Authenticity
+\end{itemize}
+
+\subsection{Computational Hardness}
+\begin{itemize}
+	\item One-Way Functions
+	\item Trapdoor Functions
+\end{itemize}
+
+\subsection{Public-Key Cryptography}
+\begin{itemize}
+	\item RSA
+	\item ECC
+	\item Typische Sicherheitsannahmen
+\end{itemize}
+
+% =================================================================
+\section{Quantum Computing and Post-Quantum Cryptography}
+
+\subsection{Fundamentals of Quantum Computing}
+\begin{itemize}
+	\item Qubits
+	\item Superposition
+	\item Quantum Advantage
+\end{itemize}
+
+\subsection{Shor's Algorithm}
+\begin{itemize}
+	\item Auswirkungen auf RSA
+	\item Auswirkungen auf ECC
+\end{itemize}
+
+\subsection{Grover's Algorithm}
+\begin{itemize}
+	\item Auswirkungen auf symmetrische Verfahren
+\end{itemize}
+
+\subsection{Need for Post-Quantum Cryptography}
+\begin{itemize}
+	\item Store Now, Decrypt Later
+	\item Migration Challenges
+\end{itemize}
+
+\subsection{Overview of PQC Families}
+\begin{itemize}
+	\item Lattice-based
+	\item Code-based
+	\item Hash-based
+	\item Multivariate
+	\item Isogeny-based
+\end{itemize}
+
+\subsection{Position of McEliece within PQC}
+\begin{itemize}
+	\item Historische Entwicklung
+	\item NIST-Prozess
+	\item Classic McEliece
+\end{itemize}
+
+% =================================================================
+\section{The McEliece Cryptosystem}
+
+\subsection{Error-Correcting Codes}
+\begin{itemize}
+	\item Motivation
+	\item Kommunikationsfehler
+	\item Fehlerkorrektur
+\end{itemize}
+
+\subsection{Linear Codes}
+\begin{itemize}
+	\item Codewords
+	\item Generator Matrix
+	\item Parity Check Matrix
+\end{itemize}
+
+\subsection{Goppa Codes}
+\begin{itemize}
+	\item Grundidee
+	\item Eigenschaften
+	\item Fehlerkorrekturfähigkeit
+\end{itemize}
+
+\subsection{Structure of the McEliece Cryptosystem}
+\begin{itemize}
+	\item Private Key
+	\item Public Key
+	\item Message
+	\item Error Vector
+\end{itemize}
+
+\subsection{Key Generation}
+\begin{itemize}
+	\item Generator Matrix
+	\item Scrambling Matrix
+	\item Permutation Matrix
+	\item Public Key Construction
+\end{itemize}
+
+\subsection{Encryption}
+\begin{itemize}
+	\item Encoding
+	\item Error Addition
+\end{itemize}
+
+\subsection{Decryption}
+\begin{itemize}
+	\item Decoding
+	\item Error Correction
+\end{itemize}
+
+\subsection{Security Assumption}
+\begin{itemize}
+	\item General Decoding Problem
+	\item Schwierigkeit zufälliger linearer Codes
+\end{itemize}
+
+\subsection{Educational Abstraction}
+\ %
+
+% =================================================================
+\section{Educational and Didactic Concept}
+
+\subsection{Learning Objectives}
+\begin{itemize}
+	\item PQC verstehen
+	\item McEliece einordnen können
+	\item Schlüsselabläufe nachvollziehen können
+\end{itemize}
+
+\subsection{Target Audience Analysis}
+\begin{itemize}
+	\item Bachelor-Studierende
+	\item Grundkenntnisse Kryptographie
+\end{itemize}
+
+\subsection{Educational Challenges}
+\begin{itemize}
+	\item Abstrakte Mathematik
+	\item Hohe Komplexität
+\end{itemize}
+
+\subsection{Visualization Principles}
+\begin{itemize}
+	\item Cognitive Load Theory
+	\item Progressive Disclosure
+	\item Step-by-Step Visualization
+\end{itemize}
+
+\subsection{Concept of the Learning Tool}
+\begin{itemize}
+	\item Lernszenarien
+	\item Benutzerfluss
+	\item Interaktionen
+\end{itemize}
+
+% =================================================================
+\section{CrypTool Online Architecture}
+
+\subsection{Introduction to CrypTool}
+\begin{itemize}
+	\item CrypTool Projekt
+	\item CrypTool Online
+\end{itemize}
+
+\subsection{Architecture of CrypTool Online}
+\begin{itemize}
+	\item Workflow-Konzept
+	\item Plugins
+	\item Datenflüsse
+\end{itemize}
+
+\subsection{Existing Educational Components}
+\begin{itemize}
+	\item Analyse bestehender CTO-Plugins
+\end{itemize}
+
+\subsection{Requirements for a McEliece Plugin}
+\begin{itemize}
+	\item Fachliche Anforderungen
+	\item Didaktische Anforderungen
+	\item Technische Anforderungen
+\end{itemize}
+
+% =================================================================
+\section{Design of the McEliece Learning Plugin}
+
+\subsection{Requirements Engineering}
+\begin{itemize}
+	\item Functional Requirements
+	\item Non-Functional Requirements
+\end{itemize}
+
+\subsection{System Design}
+\begin{itemize}
+	\item Architekturdiagramm
+\end{itemize}
+
+\subsection{User Interface Design}
+\begin{itemize}
+	\item Layout
+	\item Navigation
+	\item Interaktion
+\end{itemize}
+
+\subsection{Visualization Design}
+\begin{itemize}
+	\item Prozessdiagramme
+	\item Matrixdarstellung
+	\item Animationen
+\end{itemize}
+
+\subsection{Data Flow Design}
+\begin{itemize}
+	\item Eingaben
+	\item Ausgaben
+	\item Zwischenzustände
+\end{itemize}
+
+% =================================================================
+\section{Implementation}
+
+\subsection{Development Environment}
+\begin{itemize}
+	\item CTO Framework
+	\item Programmiersprache
+	\item Tools
+\end{itemize}
+
+\subsection{Implementation of Key Generation}
+\begin{itemize}
+	\item Technische Umsetzung
+\end{itemize}
+
+\subsection{Implementation of Encryption}
+\begin{itemize}
+	\item Technische Umsetzung
+\end{itemize}
+
+\subsection{Implementation of Decryption}
+\begin{itemize}
+	\item Technische Umsetzung
+\end{itemize}
+
+\subsection{Visualization Components}
+\begin{itemize}
+	\item Animationen
+	\item Grafiken
+	\item Interaktive Elemente
+\end{itemize}
+
+\subsection{Challenges and Solutions}
+\begin{itemize}
+	\item Technische Probleme
+	\item Didaktische Probleme
+\end{itemize}
+
+% =================================================================
+\section{Evaluation}
+% siehe eigene Anmerkung am Ende des Dokuments zu moeglichen Unterkapiteln
+
+% =================================================================
+\section{Conclusion and Future Work}
+% siehe eigene Anmerkung am Ende des Dokuments zu moeglichen Unterkapiteln
+
+% =================================================================
+\section{Sources}
+\begin{itemize}
+	\item Codebasierte Post-Quanten-Kryptografie: Goppa Codes und das McEliece
+	      Kryptosystem\\
+	      \url{https://opac-ku-de.thi.idm.oclc.org/s/thi/de/2/10/BV050193470}
+
+	\item From distributed quantum computing to quantum internet computing: an
+	      introduction\\
+	      \url{https://opac-ku-de.thi.idm.oclc.org/s/thi/de/2/10/BV049602831}
+
+	\item Bundesamt für Sicherheit in der Informationstechnik (BSI): Quantentechnologien
+	      und Post-Quanten-Kryptografie\\
+	      \url{https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Quantentechnologien-und-Post-Quanten-Kryptografie/quantentechnologien-und-post-quanten-kryptografie_node.html}
+
+	\item Classic McEliece (Web-Archiv-Version vom 25.12.2025)\\
+	      \url{https://web.archive.org/web/20251225181518/https://classic.mceliece.org/index.html}
+
+	\item BSI: Kryptografie quantensicher gestalten\\
+	      \url{https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Kryptografie-quantensicher-gestalten.pdf?__blob=publicationFile&v=6}
+
+	\item R.\ McEliece. \emph{A public-key cryptosystem based on algebraic coding
+	      theory}. The Deep Space Network Progress Report, DSN PR 42--44, 1978.
+\end{itemize}
+
+% =================================================================
+\clearpage
+\section*{Eigene Anmerkungen und Verbesserungsvorschläge}
+\textit{Die folgenden Punkte sind \textbf{keine} Vorgaben des Professors, sondern
+eigene Vorschläge, die zur Diskussion stehen.}
+
+\begin{tcolorbox}[breakable, colback=notebg, colframe=thiblau, title=Vorschläge]
+\begin{enumerate}
+	\item \textbf{Kapitel 9 (Evaluation) ausformulieren.} Aktuell hat dieses Kapitel
+	      keine Unterkapitel. Vorschlag für eine Struktur:
+	      \begin{itemize}
+	      	\item 9.1 Evaluation Method (z.\,B. Experten-Review, kleine Nutzerstudie
+	      	      mit Kommilitonen, Vergleich mit Lernzielen aus 5.1)
+	      	\item 9.2 Study Design / Participants
+	      	\item 9.3 Results
+	      	\item 9.4 Discussion of Results
+	      	\item 9.5 Limitations of the Evaluation
+	      \end{itemize}
+	      Damit lässt sich später klarer zeigen, \emph{wie} die Forschungsfrage
+	      beantwortet wurde, nicht nur \emph{dass} ein Plugin gebaut wurde.
+
+	\item \textbf{Kapitel 10 (Conclusion and Future Work) ebenfalls untergliedern:}
+	      \begin{itemize}
+	      	\item 10.1 Summary of Contributions
+	      	\item 10.2 Answering the Research Question
+	      	\item 10.3 Limitations
+	      	\item 10.4 Future Work
+	      \end{itemize}
+
+	\item \textbf{Related Work ergänzen.} In Kapitel 1 oder 6.3 fehlt noch ein
+	      expliziter Vergleich mit bereits existierenden Lehrmitteln zu
+	      code-basierter/Post-Quanten-Kryptographie (z.\,B. andere CrypTool-Plugins,
+	      interaktive Tools anderer Universitäten). Das stärkt die Argumentation,
+	      warum ein neues Plugin nötig ist.
+
+	\item \textbf{Abgrenzung von "Implementation" und "Visualisierung" schärfen.}
+	      Der Titel nennt beides gleichwertig; in der Gliederung dominiert aktuell
+	      die Implementierung (Kapitel 4, 7, 8). Es könnte helfen, in 1.5 (Scope)
+	      explizit festzulegen, welche McEliece-Parametergrößen real unterstützt
+	      werden (Lehr-/Demo-Parameter vs. reale/klassische Sicherheitsparameter),
+	      da vollständige Classic-McEliece-Parameter für eine Visualisierung im
+	      Browser vermutlich zu groß sind.
+
+	\item \textbf{Kleinere Tippfehler in der Vorlage korrigiert:} "Cryptograhy"
+	      $\rightarrow$ "Cryptography" (2.1), "McElieve" $\rightarrow$ "McEliece"
+	      (3.6-Überschrift), "Isogene-based" $\rightarrow$ "Isogeny-based" (3.5).
+
+	\item \textbf{Quellenverzeichnis auf BibTeX umstellen.} Für die eigentliche
+	      Thesis (\texttt{thesis.tex}) sollten alle Quellen aus Kapitel 11 als
+	      Einträge in \texttt{literature.bib} angelegt und per \verb|\cite{...}|
+	      referenziert werden, statt als reine Linkliste -- das nutzt die im
+	      Template bereits vorbereitete \texttt{natbib}-Infrastruktur.
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}
