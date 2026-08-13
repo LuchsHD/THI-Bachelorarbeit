@@ -1,10 +1,7 @@
 % =====================================================================
 % Strukturplan für die Bachelorarbeit
 % Eigenständiges Dokument (nicht Teil von thesis.tex) - dient als
-% Planungs-/Referenzdokument und als erste Uebungsdatei fuer VS Code.
-%
-% Revision 2: eingearbeitet Rückmeldung des Betreuers vom 2026-08-13
-% (siehe "Änderungen in dieser Revision" nach der Executive Summary).
+% Planungs-/Referenzdokument.
 % =====================================================================
 \documentclass[a4paper,11pt]{article}
 
@@ -23,19 +20,14 @@
 
 \usepackage{xcolor}
 \definecolor{thiblau}{rgb}{0,0.112,0.47}
-\definecolor{notebg}{RGB}{240,240,250}
-\definecolor{profbg}{RGB}{255,244,224}
 
 \usepackage{titlesec}
 \titleformat{\section}{\Large\bfseries\color{thiblau}}{\thesection}{1em}{}
 \titleformat{\subsection}{\large\bfseries\color{thiblau}}{\thesubsection}{1em}{}
 
-\usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
-
 \title{\color{thiblau}Strukturplan für die Bachelorarbeit}
 \author{Thomas Schneider}
-\date{Revision 2 -- Stand: \today}
+\date{\today}
 
 \begin{document}
 
@@ -46,6 +38,7 @@
 \begin{tabular}{@{}ll}
 	\textbf{Name:}      & Thomas Schneider \\
 	\textbf{Standort:}  & Technische Hochschule Ingolstadt (THI) \\
+	\textbf{Studiengang:} & Informatik \\
 	\textbf{Sprache:}   & Englisch \\
 	\textbf{Titel:}     & Implementation and Visualization of a Post-Quantum Cryptosystem \\
 	                    & Using the Example of the McEliece Cryptosystem \\
@@ -95,43 +88,6 @@ security-related domains.
 
 The thesis contributes both a practical software implementation and a didactic
 framework for teaching code-based post-quantum cryptography.
-
-% ---------------------------------------------------------------
-\clearpage
-\section*{Änderungen in dieser Revision}
-
-\begin{tcolorbox}[breakable, colback=profbg, colframe=thiblau, title=Rückmeldung des Betreuers (2026-08-13)]
-\begin{enumerate}
-	\item \textbf{Zu 3.1--3.3 (Quantum Computing, Shor's, Grover's Algorithm):}
-	      ,,Sie können überlegen diese Punkte zu einem Grundlagenkapitel
-	      zusammenzufassen.``
-	      $\rightarrow$ zu \emph{einer} Subsection zusammengefasst (jetzt 3.1).
-
-	\item \textbf{Zu Kapitel 5 \& 6 (CrypTool Online Architecture / Educational
-	      and Didactic Concept):} ,,6 würde ich vor 5 ziehen, dann haben Sie
-	      alle Grundlagen hintereinander.``
-	      $\rightarrow$ Reihenfolge getauscht: CrypTool Online Architecture ist
-	      jetzt Kapitel 5, Educational and Didactic Concept Kapitel 6.
-
-	\item \textbf{Zu 1.2 (Problem Statement):} ,,Hier kürzen -- die Einleitung
-	      sollte maximal 2 Seiten haben, lieber schieben Sie einige Teile
-	      (Problem Statement) weiter hinten, nach den Grundlagen in ein
-	      'Requirementskapitel'. Da können Sie dann auch die Objectives
-	      ausarbeiten und den Scope nochmal herausarbeiten.``
-	      $\rightarrow$ Problem Statement, Objectives und Scope aus der
-	      Einleitung entfernt; neues Kapitel~7 \emph{Requirements} nach den
-	      Grundlagenkapiteln eingefügt, das diese drei Punkte aufnimmt und
-	      ausarbeitet.
-
-	\item \textbf{Zu Kapitel 2 (Fundamentals of Cryptography):} ,,Hier dürfen
-	      Sie knapp bleiben: Fokus, was für die Arbeit wichtig ist. Zielgruppe
-	      Ihrer Arbeit sind Absolventen Ihres Studiengangs, d.\,h. einiges
-	      wissen die auch.``
-	      $\rightarrow$ Gliederung unverändert gelassen (4 Subsections), aber
-	      als Hinweis direkt im Kapitel vermerkt: knapp halten, nur worauf
-	      spätere Kapitel wirklich aufbauen.
-\end{enumerate}
-\end{tcolorbox}
 
 \clearpage
 \tableofcontents
@@ -193,9 +149,6 @@ wird.}
 \section{Quantum Computing and Post-Quantum Cryptography}
 
 \subsection{Quantum Computing Fundamentals and Impact on Classical Cryptography}
-\textit{Zusammengefasst aus den ehemals separaten Punkten "Fundamentals of
-Quantum Computing", "Shor's Algorithm" und "Grover's Algorithm" (Vorschlag
-des Betreuers).}
 \begin{itemize}
 	\item Qubits, Superposition, Quantum Advantage
 	\item Shor's Algorithm -- Auswirkungen auf RSA und ECC
@@ -287,8 +240,6 @@ des Betreuers).}
 
 % =================================================================
 \section{CrypTool Online Architecture}
-\textit{Vorgezogen von ehemals Kapitel 6 (Rückmeldung des Betreuers), damit
-alle Grundlagenkapitel (2--6) hintereinander stehen.}
 
 \subsection{Introduction to CrypTool}
 \begin{itemize}
@@ -308,10 +259,14 @@ alle Grundlagenkapitel (2--6) hintereinander stehen.}
 	\item Analyse bestehender CTO-Plugins
 \end{itemize}
 
+\subsection{Related Work}
+\begin{itemize}
+	\item Vergleich mit bestehenden Lehrmitteln zu code-basierter/Post-Quanten-Kryptographie
+	\item Abgrenzung: was macht diese Arbeit anders/zusätzlich?
+\end{itemize}
+
 % =================================================================
 \section{Educational and Didactic Concept}
-\textit{Ehemals Kapitel 5, jetzt nach CrypTool Online Architecture (Rückmeldung
-des Betreuers).}
 
 \subsection{Learning Objectives}
 \begin{itemize}
@@ -348,11 +303,6 @@ des Betreuers).}
 
 % =================================================================
 \section{Requirements}
-\textit{Neues Kapitel (Rückmeldung des Betreuers). Nimmt Problem Statement,
-Objectives und Scope aus der (jetzt kurzen) Einleitung auf und arbeitet sie
-aus; ergänzt um die technischen Anforderungen, die vorher unter "Design"
-bzw. "CrypTool Online Architecture" standen (eigener Vorschlag, siehe
-Anmerkungen am Ende des Dokuments).}
 
 \subsection{Problem Statement}
 \begin{itemize}
@@ -369,7 +319,11 @@ Anmerkungen am Ende des Dokuments).}
 \end{itemize}
 
 \subsection{Scope}
-Abgrenzung der Arbeit
+\begin{itemize}
+	\item Abgrenzung der Arbeit
+	\item Festlegung der unterstützten McEliece-Parametergrößen
+	      (Lehr-/Demo-Parameter vs. reale/klassische Sicherheitsparameter)
+\end{itemize}
 
 \subsection{Functional Requirements}
 \ %
@@ -453,15 +407,67 @@ Abgrenzung der Arbeit
 
 % =================================================================
 \section{Evaluation}
-% siehe eigene Anmerkung am Ende des Dokuments zu moeglichen Unterkapiteln
+
+\subsection{Evaluation Method}
+\begin{itemize}
+	\item Experten-Review und/oder kleine Nutzerstudie mit Kommiliton*innen
+	\item Abgleich mit den Lernzielen aus Abschnitt 6.1
+\end{itemize}
+
+\subsection{Study Design / Participants}
+\ %
+
+\subsection{Results}
+\ %
+
+\subsection{Discussion of Results}
+\ %
+
+\subsection{Limitations of the Evaluation}
+\ %
 
 % =================================================================
 \section{Conclusion and Future Work}
-% siehe eigene Anmerkung am Ende des Dokuments zu moeglichen Unterkapiteln
+
+\subsection{Summary of Contributions}
+\ %
+
+\subsection{Answering the Research Question}
+\ %
+
+\subsection{Limitations}
+\ %
+
+\subsection{Future Work}
+\ %
 
 % =================================================================
 \section{Sources}
 \begin{itemize}
+	\item R.\,J. McEliece: \emph{A Public-Key Cryptosystem Based On Algebraic
+	      Coding Theory}. DSN Progress Report 42--44, Jet Propulsion Laboratory,
+	      1978, S.~114--116.
+
+	\item D.\,J. Bernstein, J. Buchmann, E. Dahmen (Hrsg.): \emph{Post-Quantum
+	      Cryptography}. Springer, 2009, ISBN 978-3-540-88701-0. \\
+	      (liegt als PDF im Ordner \texttt{Quellen/})
+
+	\item R. Overbeck, N. Sendrier: \emph{Code-based Cryptography}. Kapitel in
+	      obigem Sammelband, S.~95--141.
+
+	\item P.\,W. Shor: \emph{Polynomial-Time Algorithms for Prime Factorization
+	      and Discrete Logarithms on a Quantum Computer}. SIAM Journal on
+	      Computing 26(5), 1997, S.~1484--1509. \\
+	      (Preprint liegt als PDF im Ordner \texttt{Quellen/})
+
+	\item L.\,K. Grover: \emph{A Fast Quantum Mechanical Algorithm for Database
+	      Search}. Proceedings of STOC 1996, S.~212--219.
+
+	\item D.\,J. Bernstein et al.: \emph{Classic McEliece: Conservative
+	      Code-Based Cryptography}. Offizielle Projektpräsentation, 17.09.2024,
+	      \url{https://classic.mceliece.org/} \\
+	      (liegt als PDF im Ordner \texttt{Quellen/})
+
 	\item Felix Peter Paul: \emph{Codebasierte Post-Quanten-Kryptografie: Goppa
 	      Codes und das McEliece Kryptosystem}. Springer Vieweg, BestMasters,
 	      2025. \url{https://doi.org/10.1007/978-3-658-46743-2} \\
@@ -471,95 +477,17 @@ Abgrenzung der Arbeit
 	      Internet Computing: An Introduction}. Wiley-IEEE Press, 2024. \\
 	      (liegt als PDF im Ordner \texttt{Quellen/})
 
+	\item National Institute of Standards and Technology (NIST): Post-Quantum
+	      Cryptography Project. \url{https://csrc.nist.gov/projects/post-quantum-cryptography}
+
 	\item Bundesamt für Sicherheit in der Informationstechnik (BSI):
-	      Quantentechnologien und Post-Quanten-Kryptografie\\
+	      Quantentechnologien und Post-Quanten-Kryptografie \\
 	      \url{https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Quantentechnologien-und-Post-Quanten-Kryptografie/quantentechnologien-und-post-quanten-kryptografie_node.html}
 
-	\item Classic McEliece (Web-Archiv-Version vom 25.12.2025)\\
-	      \url{https://web.archive.org/web/20251225181518/https://classic.mceliece.org/index.html}
-
-	\item BSI: Kryptografie quantensicher gestalten\\
+	\item BSI: Kryptografie quantensicher gestalten \\
 	      \url{https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Kryptografie-quantensicher-gestalten.pdf?__blob=publicationFile&v=6}
-
-	\item R.\ McEliece. \emph{A public-key cryptosystem based on algebraic coding
-	      theory}. The Deep Space Network Progress Report, DSN PR 42--44, 1978.
-
-	\item \textit{Neu vorgeschlagen (siehe Anmerkungen unten):} Bernstein,
-	      Buchmann, Dahmen (Hrsg.), \emph{Post-Quantum Cryptography}, Springer,
-	      2009; Shor (1994); Grover (1996); NIST PQC Project.
 \end{itemize}
-Alle Einträge sind bereits als Vorlage in \texttt{literature.bib} angelegt und
-können per \verb|\cite{...}| referenziert werden.
-
-% =================================================================
-\clearpage
-\section*{Eigene Anmerkungen und Verbesserungsvorschläge}
-\textit{Die folgenden Punkte sind \textbf{keine} Vorgaben des Professors, sondern
-eigene Vorschläge, die zur Diskussion stehen.}
-
-\begin{tcolorbox}[breakable, colback=notebg, colframe=thiblau, title=Vorschläge]
-\begin{enumerate}
-	\item \textbf{Requirements für das Plugin (6.4 alt) in Kapitel 7 verschoben.}
-	      Damit stehen alle Anforderungen (Problem Statement, Objectives, Scope,
-	      Functional/Non-Functional Requirements, Requirements for the Plugin)
-	      gebündelt an einer Stelle statt über zwei Kapitel verteilt.
-
-	\item \textbf{Kapitel 10 (Evaluation) ausformulieren.} Aktuell hat dieses
-	      Kapitel keine Unterkapitel. Vorschlag für eine Struktur:
-	      \begin{itemize}
-	      	\item 10.1 Evaluation Method (z.\,B. Experten-Review, kleine
-	      	      Nutzerstudie mit Kommilitonen, Vergleich mit Lernzielen aus 6.1)
-	      	\item 10.2 Study Design / Participants
-	      	\item 10.3 Results
-	      	\item 10.4 Discussion of Results
-	      	\item 10.5 Limitations of the Evaluation
-	      \end{itemize}
-
-	\item \textbf{Kapitel 11 (Conclusion and Future Work) ebenfalls untergliedern:}
-	      \begin{itemize}
-	      	\item 11.1 Summary of Contributions
-	      	\item 11.2 Answering the Research Question
-	      	\item 11.3 Limitations
-	      	\item 11.4 Future Work
-	      \end{itemize}
-
-	\item \textbf{Related Work ergänzen.} In Kapitel 1 oder 5.3 fehlt noch ein
-	      expliziter Vergleich mit bereits existierenden Lehrmitteln zu
-	      code-basierter/Post-Quanten-Kryptographie (z.\,B. andere
-	      CrypTool-Plugins, interaktive Tools anderer Universitäten). Das stärkt
-	      die Argumentation, warum ein neues Plugin nötig ist.
-
-	\item \textbf{Abgrenzung von "Implementation" und "Visualisierung" schärfen.}
-	      Der Titel nennt beides gleichwertig; in der Gliederung dominiert aktuell
-	      die Implementierung (Kapitel 4, 8, 9). Es könnte helfen, in 7.3 (Scope)
-	      explizit festzulegen, welche McEliece-Parametergrößen real unterstützt
-	      werden (Lehr-/Demo-Parameter vs. reale/klassische Sicherheitsparameter),
-	      da vollständige Classic-McEliece-Parameter für eine Visualisierung im
-	      Browser vermutlich zu groß sind.
-
-	\item \textbf{Zusätzliche Quellenvorschläge} (noch nicht offiziell Teil der
-	      Quellenliste, aber etablierte Standardreferenzen):
-	      \begin{itemize}
-	      	\item D.\,J. Bernstein, J. Buchmann, E. Dahmen (Hrsg.),
-	      	      \emph{Post-Quantum Cryptography}, Springer, 2009 -- gutes
-	      	      Überblickswerk für Kapitel 3.
-	      	\item P.\,W. Shor, \emph{Algorithms for quantum computation: discrete
-	      	      logarithms and factoring}, FOCS 1994 -- Primärquelle für 3.1.
-	      	\item L.\,K. Grover, \emph{A fast quantum mechanical algorithm for
-	      	      database search}, STOC 1996 -- Primärquelle für 3.1.
-	      	\item NIST Post-Quantum Cryptography Project
-	      	      (\url{https://csrc.nist.gov/projects/post-quantum-cryptography})
-	      	      -- für 3.4 (NIST-Prozess, Classic McEliece Status).
-	      \end{itemize}
-	      Bitte gegenprüfen/ergänzen -- ich habe diese nicht aus Ihrem
-	      Quellen-Ordner, sondern aus meinem Wissen vorgeschlagen.
-
-	\item \textbf{Für Kapitel 5/9 (CrypTool Online):} Sobald es inhaltlich
-	      sinnvoll ist, brauche ich von dir Informationen/Screenshots/Links zur
-	      CrypTool-Online-Webseite bzw. zum CTO-Plugin-Framework (z.\,B.
-	      Architektur-Dokumentation, bestehende Plugin-Beispiele) -- bitte dann
-	      Bescheid geben.
-\end{enumerate}
-\end{tcolorbox}
+Alle Einträge sind als Vorlage in \texttt{literature.bib} angelegt und können
+per \verb|\cite{...}| referenziert werden.
 
 \end{document}

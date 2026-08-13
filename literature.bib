@@ -38,6 +38,65 @@
 	note      = {liegt als PDF in Quellen/},
 }
 
+@Book{bernstein2009pqc,
+	editor    = {Bernstein, Daniel J. and Buchmann, Johannes and Dahmen, Erik},
+	title     = {Post-Quantum Cryptography},
+	publisher = {Springer},
+	address   = {Berlin, Heidelberg},
+	year      = {2009},
+	isbn      = {978-3-540-88701-0},
+	note      = {liegt als PDF in Quellen/ (Code-Based\_Cryptography.pdf)},
+}
+
+@InCollection{overbeck2009codebased,
+	author    = {Overbeck, Raphael and Sendrier, Nicolas},
+	title     = {Code-based Cryptography},
+	booktitle = {Post-Quantum Cryptography},
+	editor    = {Bernstein, Daniel J. and Buchmann, Johannes and Dahmen, Erik},
+	publisher = {Springer},
+	address   = {Berlin, Heidelberg},
+	year      = {2009},
+	pages     = {95--141},
+	note      = {Kapitel in \cite{bernstein2009pqc}; liegt als PDF in Quellen/
+	             (Code-Based\_Cryptography.pdf)},
+}
+
+@Article{shor1997,
+	author  = {Shor, Peter W.},
+	title   = {Polynomial-Time Algorithms for Prime Factorization and Discrete
+	           Logarithms on a Quantum Computer},
+	journal = {SIAM Journal on Computing},
+	volume  = {26},
+	number  = {5},
+	pages   = {1484--1509},
+	year    = {1997},
+	doi     = {10.1137/S0097539795293172},
+	note    = {Erweiterte Fassung von: Proceedings 35th Annual Symposium on
+	           Foundations of Computer Science (FOCS), 1994, S. 124--134;
+	           Preprint liegt als PDF in Quellen/ (Shor.pdf, arXiv:quant-ph/9508027)},
+}
+
+@Misc{classic_mceliece_slides2024,
+	author       = {Bernstein, Daniel J. and Chou, Tung and Cid, Carlos and
+	                Gilcher, Jan and Lange, Tanja and Maram, Varun and
+	                von Maurich, Ingo and Misoczki, Rafael and
+	                Niederhagen, Ruben and Persichetti, Edoardo and
+	                Peters, Christiane and Sendrier, Nicolas and Szefer, Jakub and
+	                Tjhai, Cen Jung and Tomlinson, Martin and Wang, Wen},
+	title        = {Classic McEliece: Conservative Code-Based Cryptography},
+	howpublished = {\url{https://classic.mceliece.org/}},
+	year         = {2024},
+	month        = sep,
+	note         = {Praesentation vom 17.09.2024; liegt als PDF in Quellen/
+	                (18-classic-mceliece-09172024.pdf)},
+}
+
+@Misc{classic_mceliece_website,
+	title        = {Classic McEliece},
+	howpublished = {\url{https://web.archive.org/web/20251225181518/https://classic.mceliece.org/index.html}},
+	note         = {Web-Archiv-Version vom 25.12.2025},
+}
+
 @Misc{bsi_pqc,
 	author       = {{Bundesamt f{\"u}r Sicherheit in der Informationstechnik (BSI)}},
 	title        = {Quantentechnologien und Post-Quanten-Kryptografie},
@@ -52,35 +111,11 @@
 	note         = {Zugriff: TODO Datum eintragen},
 }
 
-@Misc{classic_mceliece,
-	title        = {Classic McEliece},
-	howpublished = {\url{https://web.archive.org/web/20251225181518/https://classic.mceliece.org/index.html}},
-	note         = {Web-Archiv-Version vom 25.12.2025},
-}
-
-% ---------------------------------------------------------------------
-% Vorschlaege (noch nicht geprueft/uebernommen - siehe Strukturplan.tex,
-% Abschnitt "Eigene Anmerkungen"). Bitte pruefen und bei Bedarf aktivieren.
-% ---------------------------------------------------------------------
-
-@Book{bernstein2009pqc,
-	editor    = {Bernstein, Daniel J. and Buchmann, Johannes and Dahmen, Erik},
-	title     = {Post-Quantum Cryptography},
-	publisher = {Springer},
-	address   = {Berlin, Heidelberg},
-	year      = {2009},
-	isbn      = {978-3-540-88701-0},
-}
-
-@InProceedings{shor1994,
-	author    = {Shor, Peter W.},
-	title     = {Algorithms for Quantum Computation: Discrete Logarithms and
-	             Factoring},
-	booktitle = {Proceedings 35th Annual Symposium on Foundations of Computer
-	             Science},
-	year      = {1994},
-	pages     = {124--134},
-	publisher = {IEEE},
+@Misc{nist_pqc,
+	author       = {{National Institute of Standards and Technology (NIST)}},
+	title        = {Post-Quantum Cryptography},
+	howpublished = {\url{https://csrc.nist.gov/projects/post-quantum-cryptography}},
+	note         = {Zugriff: TODO Datum eintragen},
 }
 
 @InProceedings{grover1996,
@@ -91,13 +126,10 @@
 	year      = {1996},
 	pages     = {212--219},
 	publisher = {ACM},
-}
-
-@Misc{nist_pqc,
-	author       = {{National Institute of Standards and Technology (NIST)}},
-	title        = {Post-Quantum Cryptography},
-	howpublished = {\url{https://csrc.nist.gov/projects/post-quantum-cryptography}},
-	note         = {Zugriff: TODO Datum eintragen},
+	address   = {Philadelphia, PA},
+	doi       = {10.1145/237814.237866},
+	note      = {Vorschlag - noch nicht als PDF vorhanden, bitte bei Bedarf
+	             besorgen},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
