@@ -26,3 +26,10 @@
 # nomenclature
 *.nlo
 *.nls
+
+# glossaries package auxiliary state
+*.glsdefs
+
+# Quellen-PDFs (u.a. urheberrechtlich geschuetzte Buecher) - bewusst nicht
+# versioniert, da das Repo einen oeffentlichen GitHub-Remote hat.
+Quellen/

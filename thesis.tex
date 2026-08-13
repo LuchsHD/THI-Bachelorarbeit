@@ -72,8 +72,8 @@
 %----Fußzeile----------------------------------------------------------------------
 \setfootsepline{0.4pt} 							% Trennlinie Fußzeile und Textkörper
 \setkomafont{pagefoot}{\scshape}				% Schriftart in Fußfzeile, \scshape = Kapitelchen
-\ifoot{\footnotesize{John Doe}}
-\ofoot{\footnotesize{Master thesis}}		
+\ifoot{\footnotesize{Thomas Schneider}}
+\ofoot{\footnotesize{Bachelor Thesis}}
 %----------------------------------------------------------------------------------
 
 \defpagestyle{myPageStyle}{
@@ -83,9 +83,9 @@
 }{
 {
 	(\textwidth ,0.4pt)
-	\footnotesize{John Doe} \hfill \footnotesize{Master thesis}} 
-	{\footnotesize{John Doe} \hfill \footnotesize{Master thesis}} 
-	{\footnotesize{John Doe} \hfill \footnotesize{Master thesis}}
+	\footnotesize{Thomas Schneider} \hfill \footnotesize{Bachelor Thesis}}
+	{\footnotesize{Thomas Schneider} \hfill \footnotesize{Bachelor Thesis}}
+	{\footnotesize{Thomas Schneider} \hfill \footnotesize{Bachelor Thesis}}
 	(0pt ,0pt)
 }
 
@@ -225,6 +225,9 @@
 %--------------------------------------------------------------------------------
 	
 	\pagenumbering{Roman} 					% Römische Nummerierung der Kapitel/Roman page numbering
+	% TODO: Wert pruefen/anpassen, sobald das Vorspann (Titelseite bis
+	% Inhaltsverzeichnis) final steht - muss an die Seitenzahl direkt NACH
+	% dem letzten Vorspann-Roman-Seite anschliessen.
 	\setcounter{page}{6} 						% Beginn bei Seitenzahl X (hier: 6) um bei oberer Nummerierung aufzuschließen/Adapt page numbering
 	
 	%Glossar/Glossary
