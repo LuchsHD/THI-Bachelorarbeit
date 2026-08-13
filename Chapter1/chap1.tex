@@ -1,20 +1,74 @@
 % Chapter 1 - Introduction
-% Ziel: max. 2 Seiten (siehe Strukturplan.tex, Kapitel 1)
 \section{Introduction}
 \label{chap:introduction}
 
 \subsection{Motivation}
 \label{sec:motivation}
-% TODO: siehe Strukturplan.tex, Abschnitt 1.1
-% - Bedrohung klassischer Kryptographie durch Quantencomputer
-% - Relevanz von PQC
-% - Schwierigkeit des Verstaendnisses codebasierter Verfahren
-% - Bedarf an Lehr- und Lernwerkzeug
+
+For decades, the security of widely deployed public-key cryptosystems such as RSA
+and Elliptic Curve Cryptography (ECC) has rested on the assumed intractability of
+integer factorization and the discrete logarithm problem for classical computers.
+\citet{shor1997} showed that both problems can be solved in polynomial time on a
+sufficiently large quantum computer, meaning that a cryptographically relevant
+quantum computer would render these widely used schemes insecure. Although such a
+machine does not yet exist, the risk that data encrypted today could be decrypted
+retroactively once quantum computers become available -- commonly referred to as
+``store now, decrypt later'' -- has already prompted standardization bodies to act.
+In August 2024, the National Institute of Standards and Technology (NIST) published
+the first three finalized post-quantum cryptography (PQC) standards
+\citep{nist_pqc}, and the German Federal Office for Information Security (BSI)
+recommends that organizations begin migrating to quantum-safe algorithms without
+delay \citep{bsi_broschuere}. Post-quantum cryptography has thus moved from a
+theoretical research topic to an active engineering concern.
+
+Among the algorithm families studied for this purpose, code-based cryptography is
+one of the oldest. The McEliece cryptosystem, introduced by \citet{mceliece1978}
+almost five decades ago, has withstood cryptanalysis ever since and is still
+regarded as one of the most conservative choices for post-quantum encryption
+\citep{classic_mceliece_slides2024}. Its most recent NIST submission, Classic
+McEliece, was not selected for standardization in the fourth round of the NIST PQC
+process -- not because of a security weakness, but primarily because of its
+comparatively large public keys and to avoid diverging from a parallel ISO
+standardization effort \citep{nist_ir8545}. This makes McEliece a notable case: a
+cryptosystem that is simultaneously among the most trusted and among the least
+understood by students, since its security relies on coding-theoretic concepts
+(linear codes, Goppa codes) that are typically not part of an undergraduate
+curriculum \citep{overbeck2009codebased}.
+
+Interactive, browser-based learning tools have proven effective at making other
+areas of cryptography more approachable. CrypTool Online (CTO) already provides
+such visualizations for a range of classical and modern algorithms. However, no
+comparable visualization currently exists for the McEliece cryptosystem within CTO,
+leaving a gap between the system's practical and historical importance and the
+resources available to teach it.
 
 \subsection{Research Question}
 \label{sec:researchQuestion}
-% TODO: siehe Strukturplan.tex, Abschnitt 1.2
+
+Building on this motivation, this thesis addresses the following research question:
+
+\begin{quote}
+	\itshape How can the McEliece cryptosystem be implemented and visualized within
+	CrypTool Online to improve the understanding of code-based post-quantum
+	cryptography for students?
+\end{quote}
 
 \subsection{Structure of the Thesis}
 \label{sec:thesisStructure}
-% TODO: siehe Strukturplan.tex, Abschnitt 1.3
+
+The remainder of this thesis is structured as follows. \autoref{chap:cryptoFundamentals}
+briefly introduces the cryptographic fundamentals needed as a common frame of
+reference. \autoref{chap:qcAndPqc} covers the fundamentals of quantum computing and
+surveys the post-quantum cryptography landscape, positioning McEliece within it.
+\autoref{chap:mceliece} presents the McEliece cryptosystem itself, from the
+underlying coding theory to key generation, encryption, and decryption.
+\autoref{chap:ctoArchitecture} introduces CrypTool Online and its plugin
+architecture as the technical platform for this work, and reviews related
+educational tools. \autoref{chap:educationalConcept} develops the educational and
+didactic concept underlying the planned visualization.
+\autoref{chap:requirements} derives the requirements for the plugin from the
+problem statement, objectives, and scope of this thesis. \autoref{chap:pluginDesign}
+presents the design of the McEliece learning plugin, and
+\autoref{chap:implementation} describes its implementation within CTO.
+\autoref{chap:evaluation} evaluates the resulting artifact, and
+\autoref{chap:conclusion} concludes the thesis and outlines future work.
